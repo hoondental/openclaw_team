@@ -6,7 +6,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TEAMS_DIR="$ROOT_DIR/config/teams"
-MEM_DIR="$ROOT_DIR/memory/control/teams"
+MEM_DIR="$ROOT_DIR/memory/teams"
 
 TEAM_ID=""
 TEAM_NAME=""
@@ -43,7 +43,7 @@ cat > "$TEAM_FILE" <<EOF
   "status": "active",
   "members": [],
   "memory": {
-    "sharedControlPath": "memory/control/teams/$TEAM_ID"
+    "sharedPath": "memory/teams/$TEAM_ID"
   },
   "policy": {
     "mode": "director-worker",

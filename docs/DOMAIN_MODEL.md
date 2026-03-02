@@ -28,15 +28,18 @@ Shared traits:
 - Can support multiple channels, but production recommendation is one primary channel
 
 ## Memory structure (planned)
-- Control-plane metadata (this repo):
-  - `memory/control/teams/<team-id>/...` (team shared control notes)
-  - `memory/control/agents/<agent-id>/...` (agent control notes)
+- Team/shared files (operator-managed):
+  - `memory/teams/<team-id>/...`
+- Agent drawer/files (operator-managed):
+  - `memory/agents/<agent-id>/...`
 
-- OpenClaw runtime memory/session (managed by OpenClaw):
+- OpenClaw runtime memory/session (managed automatically):
   - `.openclaw/agents/<agent-id>/...`
   - session/store paths defined by runtime config and OpenClaw internals
 
 ## Notes
-- This repo does **not** replace OpenClaw runtime memory layout.
-- It adds a team-level control-plane layer above runtime primitives.
+- `memory/agents/...` is not a replacement for runtime session memory.
+- Working analogy:
+  - `.openclaw/agents/...` = agent's "head" (runtime memory)
+  - `memory/agents/...` = agent's "drawer/files" (reference material)
 - Runtime mapping (sessions/agents/channels) will be implemented incrementally.

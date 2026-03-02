@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 AGENTS_DIR="$ROOT_DIR/config/agents"
 WS_DIR="$ROOT_DIR/workspaces/agents"
-MEM_DIR="$ROOT_DIR/memory/control/agents"
+MEM_DIR="$ROOT_DIR/memory/agents"
 
 AGENT_ID=""
 FORCE=0
