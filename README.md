@@ -20,6 +20,7 @@ Team-oriented OpenClaw architecture for a single-purpose VM (e.g. dental operati
 - `scripts/` helper scripts
   - VM bootstrap: `prereq_ubuntu.sh`, `install_openclaw.sh`, `verify_env.sh`
   - lifecycle: `create_team.sh`, `remove_team.sh`, `create_agent.sh`, `remove_agent.sh`
+  - wrapper/index: `create_agency.sh`, `sync_membership.sh`
 
 ## VM bootstrap (recommended)
 ```bash

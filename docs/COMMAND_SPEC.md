@@ -8,6 +8,15 @@
 - `scripts/create_agent.sh --id <agent_id> [--name <name>] [--channel <id>] [--team <team_id>]`
 - `scripts/remove_agent.sh --id <agent_id> --force`
 
+## Agency wrapper
+- `scripts/create_agency.sh --kind team|agent ...`
+  - delegates to concrete create script by kind
+
+## Membership sync
+- `scripts/sync_membership.sh`
+  - source-of-truth: `config/agents/*.json` (`teamId`)
+  - materialized index: `config/teams/*.json` (`members[]`)
+
 ## Planned next commands
 - `assign_agent.sh --agent <agent_id> --team <team_id>`
 - `unassign_agent.sh --agent <agent_id>`
