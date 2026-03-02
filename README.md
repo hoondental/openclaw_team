@@ -16,7 +16,20 @@ Team-oriented OpenClaw architecture for a single-purpose VM (e.g. dental operati
 - `config/` example configs and mapping tables
 - `scripts/` helper scripts
 
+## VM bootstrap (recommended)
+```bash
+./scripts/prereq_ubuntu.sh
+./scripts/verify_env.sh
+./scripts/install_openclaw.sh
+./scripts/verify_env.sh --check-openclaw
+```
+
+## Why separate `install_openclaw.sh`?
+- Keeps base OS prereqs and app install concerns separate
+- Easier to pin/upgrade OpenClaw version independently
+- Cleaner troubleshooting (Node/npm vs OpenClaw issues)
+
 ## Next steps
-1. Create GitHub repo: `hoondental/openclaw_team`
-2. Add remote and push
-3. Fill role templates and memory policy
+1. Fill role templates and memory policy
+2. Add gateway creation/run scripts for team standard
+3. Add director-worker orchestration conventions
