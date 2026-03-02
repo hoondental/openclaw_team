@@ -15,7 +15,7 @@ Team-oriented OpenClaw architecture for a single-purpose VM (e.g. dental operati
   - `docs/DOMAIN_MODEL.md` (Agency/Team/Agent 개념)
   - `docs/COMMAND_SPEC.md` (명령 스펙 초안)
 - `agents/` role templates (director/workers)
-- `memory/` shared/team memory files
+- `memory/` control-plane memory files (team/agent metadata layer)
 - `config/` design-time metadata (`teams/*.json`, `agents/*.json`)
 - `scripts/` helper scripts
   - VM bootstrap: `prereq_ubuntu.sh`, `install_openclaw.sh`, `verify_env.sh`

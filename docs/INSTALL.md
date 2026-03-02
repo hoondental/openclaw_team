@@ -29,6 +29,14 @@
 - 위 파일은 git 커밋 금지
 - 토큰 노출 시 즉시 재발급
 
+## 0.2) Runtime 구조 vs Team(control-plane) 구조
+
+- OpenClaw runtime(실제 대화/세션/에이전트 상태):
+  - `~/openclaws/gateways/<gw>/.openclaw/agents/...`
+- openclaw_team repo의 `memory/control/...`:
+  - 팀/에이전트 운영 메타데이터 및 설계 레이어
+  - runtime 메모리 대체가 아님
+
 ---
 
 ## 1) 설치 순서 (권장)

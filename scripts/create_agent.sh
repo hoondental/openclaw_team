@@ -9,7 +9,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 AGENTS_DIR="$ROOT_DIR/config/agents"
 WS_DIR="$ROOT_DIR/workspaces/agents"
-MEM_DIR="$ROOT_DIR/memory/agents"
+MEM_DIR="$ROOT_DIR/memory/control/agents"
 
 AGENT_ID=""
 AGENT_NAME=""
@@ -61,7 +61,8 @@ cat > "$AGENT_FILE" <<EOF
   },
   "workspace": "workspaces/agents/$AGENT_ID",
   "memory": {
-    "privatePath": "memory/agents/$AGENT_ID",
+    "controlPath": "memory/control/agents/$AGENT_ID",
+    "runtimeNote": "OpenClaw runtime memory/session lives under runtime .openclaw/agents/...",
     "teamReferenceMode": "read-shared"
   },
   "openclaw": {

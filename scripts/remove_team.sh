@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TEAMS_DIR="$ROOT_DIR/config/teams"
-MEM_DIR="$ROOT_DIR/memory/teams"
+MEM_DIR="$ROOT_DIR/memory/control/teams"
 
 TEAM_ID=""
 FORCE=0
