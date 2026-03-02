@@ -9,6 +9,26 @@
 - 한 VM에 팀 전용 OpenClaw 운영 환경 준비
 - 추후 1 Gateway + 다수 Agent 구조로 확장 가능한 기반 확보
 
+## 0.1) 중요한 파일 위치 (토큰/설정)
+
+기본 런타임 루트: `~/openclaws`
+
+- Gateway 설정 파일:  
+  `~/openclaws/gateways/<gateway-name>/.openclaw/openclaw.json`
+- Gateway 환경 파일:  
+  `~/openclaws/gateways/<gateway-name>/gateway.env`
+- Node 환경 파일:  
+  `~/openclaws/nodes/<node-name>/node.env`
+
+토큰 관련 메모:
+- Telegram bot token: `openclaw.json` 내 `channels.telegram.botToken`
+- Gateway auth token: `openclaw.json` 내 `gateway.auth.token`
+- 모델 인증(OAuth/API key): 해당 agent runtime 하위 auth store 파일
+
+보안 주의:
+- 위 파일은 git 커밋 금지
+- 토큰 노출 시 즉시 재발급
+
 ---
 
 ## 1) 설치 순서 (권장)
@@ -125,6 +145,15 @@ sed -i '/^prefix=/d' ~/.npmrc 2>/dev/null || true
 - `install_gateway.sh` (gateway 생성/시작 표준화)
 - `install_node.sh` (노드 추가 표준화)
 - Director/Worker agent 배치 템플릿
+
+### Agent 단계로 넘어가도 되나?
+네. Gateway가 안정적으로 떠 있고(서비스 active), 채널 1개 이상 송수신 확인됐다면 다음 단계로 넘어가면 됨.
+
+권장 Agent 온보딩 순서:
+1. Director agent 1개 정의 (공유 메모리 큐레이션 담당)
+2. Worker agent 1개부터 시작 (예: frontdesk)
+3. Worker→Director 보고 흐름(sessions_send/sessions_spawn) 검증
+4. 역할별 Worker를 점진적으로 추가
 
 ---
 
