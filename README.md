@@ -11,6 +11,7 @@ Team-oriented OpenClaw architecture for a single-purpose VM (e.g. dental operati
 
 ## Repo layout
 - `docs/` architecture and operating rules
+  - `docs/INSTALL.md` (설치 순서/옵션/트러블슈팅)
 - `agents/` role templates (director/workers)
 - `memory/` shared/team memory files
 - `config/` example configs and mapping tables
